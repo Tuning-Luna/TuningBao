@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  }
+}
