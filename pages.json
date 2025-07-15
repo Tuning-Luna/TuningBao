@@ -30,6 +30,15 @@
 			}
 		}
 	],
+	"subPackages": [{
+		"root": "subPkg",
+		"pages": [{
+			"path": "search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}]
+	}],
 	"tabBar": {
 		"color": "#000000",
 		"selectedColor": "#7bab59",
@@ -68,9 +77,9 @@
 		]
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "TuningBao",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#7bab59",
 		"backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"

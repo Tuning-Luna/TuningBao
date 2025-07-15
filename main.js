@@ -19,7 +19,7 @@ import {
 import App from './App.vue'
 
 // 初始化并配置request函数
-import 'utils/request.js'
+import '@/utils/request.js'
 
 export function createApp() {
 	const app = createSSRApp(App)
