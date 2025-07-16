@@ -73,11 +73,14 @@
 				width: 100px;
 
 				.lv1-item {
-					background-color: #c4c4c4;
+					background-color: #eaeaea;
 					height: 50px;
 					text-align: center;
 					line-height: 50px;
 					font-size: 14px;
+					color: #333;
+					cursor: pointer;
+
 
 					&.active {
 						background-color: #f5f5f5;
@@ -95,10 +98,11 @@
 							height: 25px;
 							width: 5px;
 							background-color: $tuning-main-color;
-
 						}
 					}
 				}
+
+
 
 			}
 

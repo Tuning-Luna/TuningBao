@@ -1,43 +1,32 @@
 <template>
 	<list-view class="message-list">
-		<view>
-			<view class="header">
-				<text class="header-title">消息</text>
-				<view class="header-icons">
-					<image src="/static/message/icon/search.png" class="icon-placeholder"></image>
-					<image src="/static/message/icon/avatar.png" class="icon-placeholder"></image>
-					<image src="/static/message/icon/plus.png" class="icon-placeholder"></image>
-				</view>
+		<view class="header">
+			<text class="header-title">消息</text>
+			<view class="header-icons">
+				<image src="/static/message/icon/search.png" class="icon-placeholder"></image>
+				<image src="/static/message/icon/avatar.png" class="icon-placeholder"></image>
+				<image src="/static/message/icon/plus.png" class="icon-placeholder"></image>
 			</view>
-
-
-			<!-- 聊天 -->
-			<list-item v-for="item in messages" :key="item.id" class="message-item">
-				<image src="/static/message/avatar.png" class="avatar" />
-				<view class="item-content">
-					<text class="item-name">{{ item.name }}</text>
-					<text class="item-message">{{ item.message }}</text>
-				</view>
-				<text class="item-time">{{ item.time }}</text>
-			</list-item>
 		</view>
+
+
+		<!-- 聊天 -->
+		<list-item v-for="item in messages" :key="item.id" class="message-item">
+			<image src="/static/message/avatar.png" class="avatar" />
+			<view class="item-content">
+				<text class="item-name">{{ item.name }}</text>
+				<text class="item-message">{{ item.message }}</text>
+			</view>
+			<text class="item-time">{{ item.time }}</text>
+		</list-item>
 	</list-view>
 </template>
 
 <script lang="ts" setup>
-	import { ref } from 'vue';
-
-	// 定义消息数据结构
-	interface Message {
-		id : number;
-		name : string;
-		message : string;
-		time : string;
-		avatar : string;
-	}
+	import { ref } from 'vue'
 
 	// 消息数据
-	const messages = ref<Message[]>([
+	const messages = ref([
 		{ id: 1, name: 'xxx旗舰店', message: '您好！有什么可以帮助您的？', time: '10:00', avatar: 'https://example.com/avatar1.jpg' },
 		{ id: 2, name: '评论回复', message: '感谢您的反馈！', time: '11:00', avatar: 'https://example.com/avatar2.jpg' },
 		{ id: 3, name: '另一个用户', message: '明天见面吧。', time: '12:00', avatar: 'https://example.com/avatar3.jpg' },
@@ -65,72 +54,75 @@
 	.message-list {
 		flex: 1;
 		background-color: #f5f5f5;
-	}
 
-	.header {
-		position: sticky;
-		top: 0;
+		.header {
+			position: sticky;
+			top: 0;
 
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px;
-		background-color: $tuning-main-color;
-		color: white;
-	}
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+			background-color: $tuning-main-color;
+			color: white;
 
-	.header-title {
-		font-size: 18px;
-		font-weight: bold;
-	}
+			.header-title {
+				font-size: 18px;
+				font-weight: bold;
+			}
 
-	.header-icons {
-		display: flex;
-		gap: 10px;
-	}
+			.header-icons {
+				display: flex;
+				gap: 10px;
 
-	.icon-placeholder {
-		width: 20px;
-		height: 20px;
-	}
 
-	.message-item {
-		display: flex;
-		align-items: center;
-		padding: 10px;
-		background-color: white;
-		margin-bottom: 5px;
-	}
+				.icon-placeholder {
+					width: 20px;
+					height: 20px;
+				}
+			}
 
-	.avatar {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		margin-right: 10px;
-	}
 
-	.item-content {
-		flex: 1;
+		}
 
-		display: flex;
-		flex-direction: column;
-
-		.item-name {
-			font-weight: bold;
+		.message-item {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			background-color: white;
 			margin-bottom: 5px;
+			border-radius: 15px;
+			box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+
+			.avatar {
+				width: 40px;
+				height: 40px;
+				border-radius: 15px;
+				margin-right: 10px;
+			}
+
+			.item-content {
+				flex: 1;
+
+				display: flex;
+				flex-direction: column;
+
+				.item-name {
+					font-weight: bold;
+					margin-bottom: 5px;
+				}
+
+				.item-message {
+					color: #666;
+					font-size: 14px;
+				}
+			}
+
+			.item-time {
+				color: #999;
+				font-size: 12px;
+				margin-left: 10px;
+			}
 		}
-
-		.item-message {
-			color: #666;
-			font-size: 14px;
-		}
-	}
-
-
-
-	.item-time {
-		color: #999;
-		font-size: 12px;
-		margin-left: 10px;
 	}
 </style>
