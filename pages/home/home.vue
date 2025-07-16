@@ -40,17 +40,27 @@
 
 		</view>
 
+		<!-- 商品展示区域 -->
+		<view class="waterfall">
+			<good-card v-for="good in goodsStore.goods" :key="good.id" :imgSrc="good.imgSrc" :title="good.title"
+				:price="good.price" :sales="good.sales"></good-card>
+		</view>
+
+
 	</view>
 </template>
 
 <script setup lang="ts">
 	import { onMounted } from 'vue';
 	import topSearch from '@/components/top-search/top-search.vue'
+	import goodCard from '@/components/good-card/good-card.vue'
+	import { useGoodsStore } from '../../stores/goods';
+
+	const goodsStore = useGoodsStore()
 </script>
 
 <style lang="scss" scoped>
 	.container {
-		height: 100vh;
 
 		.top-search {
 			position: sticky;
@@ -100,6 +110,13 @@
 					color: #333;
 				}
 			}
+		}
+
+		.waterfall {
+			margin-top: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
 		}
 	}
 </style>

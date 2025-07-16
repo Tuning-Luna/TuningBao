@@ -18,13 +18,17 @@ import {
 } from 'vue'
 import App from './App.vue'
 
+import * as Pinia from 'pinia'
+
 // 初始化并配置request函数
 import '@/utils/request.js'
 
 export function createApp() {
 	const app = createSSRApp(App)
+	app.use(Pinia.createPinia())
 	return {
-		app
+		app,
+		Pinia
 	}
 }
 // #endif
