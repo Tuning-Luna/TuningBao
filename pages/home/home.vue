@@ -3,7 +3,7 @@
 
 		<!-- 顶部搜索框 -->
 		<view class="top-search">
-			<TopSearch></TopSearch>
+			<top-search></top-search>
 		</view>
 
 
@@ -15,12 +15,37 @@
 		</swiper>
 
 
+		<!-- 分类展示区域 -->
+		<view class="cate">
+
+			<view class="cate-item">
+				<image class="img" src="/static/home/cateImg/sport.png"></image>
+				<view class="label">运动户外</view>
+			</view>
+
+			<view class="cate-item">
+				<image class="img" src="/static/home/cateImg/food.png"></image>
+				<view class="label">食品生鲜</view>
+			</view>
+
+			<view class="cate-item">
+				<image class="img" src="/static/home/cateImg/day.png"></image>
+				<view class="label">日用百货</view>
+			</view>
+
+			<view class="cate-item">
+				<image class="img" src="/static/home/cateImg/dress.png"></image>
+				<view class="label">服装时尚</view>
+			</view>
+
+		</view>
+
 	</view>
 </template>
 
 <script setup lang="ts">
 	import { onMounted } from 'vue';
-	import TopSearch from './components/top-search.vue';
+	import topSearch from '@/components/top-search/top-search.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -48,6 +73,31 @@
 					display: block;
 
 					border-radius: 10px;
+				}
+			}
+		}
+
+		.cate {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px 0;
+
+			.cate-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 25%;
+
+				.img {
+					width: 50px;
+					height: 50px;
+					margin-bottom: 6px;
+				}
+
+				.label {
+					font-size: 14px;
+					color: #333;
 				}
 			}
 		}

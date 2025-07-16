@@ -7,6 +7,7 @@
 				<image class="img" src="/static/home/action/redpack.png"></image>
 				<text class="label">签到</text>
 			</view>
+
 			<!-- 右侧外卖页面 -->
 			<view class="item">
 				<image class="img" src="/static/home/action/shangou.png"></image>
