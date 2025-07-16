@@ -113,10 +113,12 @@
 		}
 
 		.waterfall {
+			width: 100%;
 			margin-top: 20px;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 12px;
+			justify-content: center;
 		}
 	}
 </style>

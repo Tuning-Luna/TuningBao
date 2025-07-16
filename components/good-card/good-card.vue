@@ -29,7 +29,7 @@
 		border-radius: 15px;
 		overflow: hidden;
 
-		width: 48%;
+		width: 340rpx;
 		background-color: #fff;
 
 		display: flex;
