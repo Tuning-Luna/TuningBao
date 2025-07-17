@@ -1,5 +1,5 @@
 <template>
-	<view class="good">
+	<view class="good" @click="handleClick">
 
 		<image class="img" :src="imgSrc" mode="widthFix"></image>
 
@@ -16,12 +16,19 @@
 </template>
 
 <script lang="ts" setup>
-	defineProps<{
+	const props = defineProps<{
+		id : number,
 		imgSrc : string,
 		title : string,
 		price : number,
 		sales : number
 	}>()
+
+	function handleClick() {
+		uni.navigateTo({
+			url: `/subPkg/detail/detail?id=${props.id}`
+		})
+	}
 </script>
 
 <style lang="scss" scoped>

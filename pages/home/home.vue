@@ -43,7 +43,7 @@
 		<!-- 商品展示区域 -->
 		<view class="waterfall">
 			<good-card v-for="good in goodsStore.goods" :key="good.id" :imgSrc="good.imgSrc" :title="good.title"
-				:price="good.price" :sales="good.sales"></good-card>
+				:price="good.price" :sales="good.sales" :id="good.id"></good-card>
 		</view>
 
 

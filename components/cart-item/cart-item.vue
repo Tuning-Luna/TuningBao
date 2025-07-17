@@ -6,7 +6,7 @@
 		</view>
 
 		<!-- 图片展示 -->
-		<image :src="imgSrc" class="img"></image>
+		<image :src="imgSrc" class="img" @click="handleClick"></image>
 
 		<!-- 右侧商品信息 -->
 		<view class="info">
@@ -45,6 +45,12 @@
 
 	function toggleCheck() {
 		togCheck(props.id)
+	}
+
+	function handleClick() {
+		uni.navigateTo({
+			url: `/subPkg/detail/detail?id=${props.id}`
+		})
 	}
 </script>
 

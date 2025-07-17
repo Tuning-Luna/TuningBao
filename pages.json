@@ -37,6 +37,13 @@
 			"style": {
 				"navigationBarTitleText": "搜索"
 			}
+		},
+		{
+			"path" : "detail/detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "TuningBao"
+			}
 		}]
 	}],
 	"tabBar": {
