@@ -14,7 +14,7 @@
 
 			<view class="bottom">
 				<view class="money">￥{{price}}.00</view>
-				<uni-number-box :modelValue="count" @change="changeCnt" :min="1" />
+				<uni-number-box :modelValue="count" @change="changeCnt" :min="0" />
 			</view>
 		</view>
 	</view>

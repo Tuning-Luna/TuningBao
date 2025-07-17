@@ -90,12 +90,16 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 		}
 	])
 
-
 	// 改变某个产品数量
 	function changeCount(id, number) {
 		const item = cartGoods.value.find(g => g.id === id)
 		if (item) {
 			item.count = number
+
+			// 如果把某一个购物车的商品数剪到了0，那么就删除这个商品
+			if (number === 0) {
+				cartGoods.value = cartGoods.value.filter(i => i.id !== id)
+			}
 		}
 	}
 
@@ -132,6 +136,7 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 				return total + cur.count * cur.price
 			}, 0)
 	})
+
 	// 选中商品的总数量
 	const checkedCnt = computed(() =>
 		cartGoods.value
