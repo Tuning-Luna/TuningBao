@@ -48,10 +48,15 @@
 	} from '../../stores/cart-goods'
 	import {
 		ref
-	} from 'vue';
+	} from 'vue'
+	import {
+		useGoodsStore
+	} from '../../stores/goods'
 
-	const goodsStore = useCartGoodsStore()
+	const goodsStore = useGoodsStore()
+	const cartGoodsStore = useCartGoodsStore()
 
+	// 当前组件展示的item对象
 	const item = ref()
 
 	// 导航栏左侧配置项
@@ -68,9 +73,6 @@
 	])
 
 	// 导航栏右侧按钮配置项
-
-	// 导航栏配置项
-
 	const buttonGroup = ref(
 		[{
 				text: '加入购物车',
@@ -89,17 +91,38 @@
 
 	onLoad((options) => {
 		if (options.id) {
-			item.value = goodsStore.cartGoods.find(i => String(i.id) === String(options.id))
+			item.value = goodsStore.goods.find(i => String(i.id) === String(options.id))
 		}
 	})
 
 	function onClick(e) {
-		console.log(e)
+		if (e.index === 1) {
+			uni.switchTab({
+				url: '/pages/cart/cart'
+			})
+		} else {
+			uni.showToast({
+				title: '你点击了店铺',
+				icon: 'none',
+			})
+		}
 	}
 
 
 	function buttonClick(e) {
-		console.log(e)
+		if (e.index === 0) {
+			cartGoodsStore.addGoodToCart(item.value)
+
+			uni.showToast({
+				title: '已添加'
+			})
+
+		} else {
+			uni.showToast({
+				title: '你点击了立即购买',
+				icon: 'none'
+			})
+		}
 	}
 </script>
 
