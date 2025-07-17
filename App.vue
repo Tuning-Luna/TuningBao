@@ -1,15 +1,23 @@
-<script>
-	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+<script setup lang="ts">
+	import { onShow } from '@dcloudio/uni-app'
+	import { useMessageStore } from './stores/message';
+	import { useCartGoodsStore } from './stores/cart-goods';
+
+	const messageStore = useMessageStore()
+	const cateStore = useCartGoodsStore()
+
+	onShow(() => {
+		// 显示信息和购物车的徽标，可通过调用uni.removeTabBarBadge方法进行消除
+		uni.setTabBarBadge({
+			index: 2,
+			text: String(messageStore.messages.length)
+		})
+	})
+
+	uni.setTabBarBadge({
+		index: 3,
+		text: String(cateStore.cartGoods.length)
+	})
 </script>
 
 <style lang="scss">
