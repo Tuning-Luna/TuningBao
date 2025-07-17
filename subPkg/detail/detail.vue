@@ -63,12 +63,11 @@
 	const options = ref([{
 			icon: 'shop',
 			text: '店铺',
-			infoBackgroundColor: '#007aff',
-			infoColor: "#f5f5f5"
 		},
 		{
 			icon: 'cart',
 			text: '购物车',
+			info: 0,
 		}
 	])
 
@@ -89,9 +88,13 @@
 
 
 
-	onLoad((options) => {
-		if (options.id) {
-			item.value = goodsStore.goods.find(i => String(i.id) === String(options.id))
+
+
+	// 加载好后根据跳转过来的参数进行渲染，以及购物车badge渲染
+	onLoad((opts) => {
+		if (opts.id) {
+			item.value = goodsStore.goods.find(i => String(i.id) === String(opts.id))
+			options.value[1].info = cartGoodsStore.cartGoods.length
 		}
 	})
 
@@ -116,6 +119,9 @@
 			uni.showToast({
 				title: '已添加'
 			})
+
+			// 添加后可能购物车badge会变化，再次获取即可
+			options.value[1].info = cartGoodsStore.cartGoods.length
 
 		} else {
 			uni.showToast({

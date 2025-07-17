@@ -32,11 +32,21 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 		if (item) {
 			item.count = number
 
-			// 如果把某一个购物车的商品数剪到了0，那么就删除这个商品
+			// 如果把某一个购物车的商品数减到了0，那么就删除这个商品
 			if (number === 0) {
 				cartGoods.value = cartGoods.value.filter(i => i.id !== id)
 			}
+
+			const pathData = getCurrentPages()
+			if (pathData[0].$page.fullPath === '/pages/cart/cart') {
+				// 修改完后同步更新badge
+				uni.setTabBarBadge({
+					index: 3,
+					text: String(cartGoods.value.length)
+				})
+			}
 		}
+
 	}
 
 	// 是否选中该商品
@@ -100,7 +110,6 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 	)
 
 
-
 	return {
 		cartGoods,
 		isAllChecked,
@@ -108,7 +117,7 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 		togCheck,
 		addGoodToCart,
 		checkedMoney,
-		checkedCnt
+		checkedCnt,
 	}
 
 })
