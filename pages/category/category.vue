@@ -23,7 +23,8 @@
 
 					<!-- 三级展示区域 -->
 					<view class="lv3">
-						<text class="lv3-title" v-for="j in i.children" :key="j.id">{{j.name}}</text>
+						<text class="lv3-title" v-for="j in i.children" @click="handleLv3Click(j.name)"
+							:key="j.id">{{j.name}}</text>
 					</view>
 
 				</view>
@@ -33,18 +34,29 @@
 	</view>
 </template>
 
-<script setup lang="ts">
-	import { ref } from 'vue'
-	import { useCategoryStore } from '../../stores/category.js'
+<script setup lang="js">
+	import {
+		ref
+	} from 'vue'
+	import {
+		useCategoryStore
+	} from '../../stores/category.js'
 
 	const categoryStore = useCategoryStore()
 	const activeIndex = ref(0)
 	const scrollTop = ref(0)
 
-	function handleChange(index : number) {
+	function handleChange(index) {
 		activeIndex.value = index
 		// 切换一级分类置顶，随机给一个0-1像素实现回滚到顶
 		scrollTop.value = Math.random()
+	}
+
+	function handleLv3Click(name) {
+		uni.showToast({
+			title: `你点击了：${name}`,
+			icon: 'none'
+		})
 	}
 </script>
 
