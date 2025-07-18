@@ -53,12 +53,12 @@
 <script setup lang="js">
 	import {
 		onMounted
-	} from 'vue';
+	} from 'vue'
 	import topSearch from '@/components/top-search/top-search.vue'
 	import goodCard from '@/components/good-card/good-card.vue'
 	import {
 		useGoodsStore
-	} from '../../stores/goods';
+	} from '../../stores/goods'
 
 	const goodsStore = useGoodsStore()
 

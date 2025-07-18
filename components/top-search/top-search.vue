@@ -3,13 +3,13 @@
 		<!-- 签到红包部分和右侧外卖部分 -->
 		<view class="action-bar">
 			<!-- 左侧签到页面 -->
-			<view class="item">
+			<view class="item" @click="handleSignIn">
 				<image class="img" src="/static/home/action/redpack.png"></image>
 				<text class="label">签到</text>
 			</view>
 
 			<!-- 右侧外卖页面 -->
-			<view class="item">
+			<view class="item" @click="handleTakeOut">
 				<image class="img" src="/static/home/action/shangou.png"></image>
 				<text class="label">外卖</text>
 			</view>
@@ -32,6 +32,18 @@
 	function handleClick() {
 		uni.navigateTo({
 			url: '/subPkg/search/search'
+		})
+	}
+
+	function handleSignIn() {
+		uni.navigateTo({
+			url: '/subPkg/sign-in/sign-in',
+		})
+	}
+
+	function handleTakeOut() {
+		uni.navigateTo({
+			url: '/subPkg/take-out/take-out'
 		})
 	}
 </script>
