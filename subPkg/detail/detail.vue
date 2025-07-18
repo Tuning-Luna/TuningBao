@@ -86,10 +86,6 @@
 		])
 
 
-
-
-
-
 	// 加载好后根据跳转过来的参数进行渲染，以及购物车badge渲染
 	onLoad((opts) => {
 		if (opts.id) {
@@ -178,6 +174,9 @@
 					align-items: center;
 					justify-content: center;
 
+
+					padding-left: 20px;
+
 					image {
 						width: 20px;
 						height: 20px;
@@ -185,6 +184,9 @@
 
 					text {
 						color: $tuning-main-color;
+						white-space: nowrap;
+						width: auto;
+						text-align: center;
 					}
 				}
 			}
