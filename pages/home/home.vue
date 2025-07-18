@@ -10,7 +10,7 @@
 		<!-- 轮播图 -->
 		<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="i in 5" :key="i">
-				<image :src="`/static/home/swiperImg/${i}.png`"></image>
+				<image :src="`/static/home/swiperImg/${i}.png`" @click="handleSwpClick(i)"></image>
 			</swiper-item>
 		</swiper>
 
@@ -50,13 +50,23 @@
 	</view>
 </template>
 
-<script setup lang="ts">
-	import { onMounted } from 'vue';
+<script setup lang="js">
+	import {
+		onMounted
+	} from 'vue';
 	import topSearch from '@/components/top-search/top-search.vue'
 	import goodCard from '@/components/good-card/good-card.vue'
-	import { useGoodsStore } from '../../stores/goods';
+	import {
+		useGoodsStore
+	} from '../../stores/goods';
 
 	const goodsStore = useGoodsStore()
+
+	function handleSwpClick(i) {
+		uni.navigateTo({
+			url: `/subPkg/detail/detail?id=${i}`
+		})
+	}
 </script>
 
 <style lang="scss" scoped>

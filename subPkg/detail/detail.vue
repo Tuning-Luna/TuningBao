@@ -26,7 +26,7 @@
 		</view>
 
 		<!-- 图片展示区 -->
-		<image class="pics" v-for="i in 10" :src="item.imgSrc"></image>
+		<image class="pics" v-for="i in 10" :src="item.imgSrc" :key="i"></image>
 
 		<!-- 底部导航栏区域 -->
 		<view class="goods-carts">
