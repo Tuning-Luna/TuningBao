@@ -33,18 +33,24 @@
 	"subPackages": [{
 		"root": "subPkg",
 		"pages": [{
-			"path": "search/search",
-			"style": {
-				"navigationBarTitleText": "搜索"
-			}
-		},
-		{
-			"path" : "detail/detail",
-			"style" : 
+				"path": "search/search",
+				"style": {
+					"navigationBarTitleText": "搜索"
+				}
+			},
 			{
-				"navigationBarTitleText" : "TuningBao"
+				"path": "detail/detail",
+				"style": {
+					"navigationBarTitleText": "TuningBao"
+				}
+			},
+			{
+				"path": "message-detail/message-detail",
+				"style": {
+					"navigationBarTitleText": "消息"
+				}
 			}
-		}]
+		]
 	}],
 	"tabBar": {
 		"color": "#000000",

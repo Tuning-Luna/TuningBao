@@ -11,7 +11,8 @@
 
 
 		<!-- 聊天 -->
-		<view v-for="item in messages" :key="item.id" class="message-item">
+		<view v-for="item in messages" :key="item.id" @click="handleMessageClick(item.id)" class="message-item">
+			<!-- 头像可以存放在item.avatar里面，这里我为了简单统一用avatar.png了（ -->
 			<!-- <image :src="item.avatar" class="avatar" />  -->
 			<image src="/static/message/avatar.png" class="avatar" />
 			<view class="item-content">
@@ -20,17 +21,34 @@
 			</view>
 			<text class="item-time">{{ item.time }}</text>
 		</view>
+
+
 	</view>
 </template>
 
-<script lang="ts" setup>
-	import { ref } from 'vue'
-	import { useMessageStore } from '../../stores/message'
-	import { storeToRefs } from 'pinia'
+<script lang="js" setup>
+	import {
+		ref
+	} from 'vue'
+	import {
+		useMessageStore
+	} from '../../stores/message'
+	import {
+		storeToRefs
+	} from 'pinia'
 
 	const messageStore = useMessageStore()
 
-	const { messages } = storeToRefs(messageStore)
+	const {
+		messages
+	} = storeToRefs(messageStore)
+
+
+	function handleMessageClick(id) {
+		uni.navigateTo({
+			url: `/subPkg/message-detail/message-detail?id=${id}`
+		})
+	}
 </script>
 
 <style lang="scss" scoped>
