@@ -41,6 +41,7 @@
 		.header {
 			position: sticky;
 			top: 0;
+			z-index: 10;
 
 			display: flex;
 			justify-content: space-between;
@@ -82,6 +83,20 @@
 				height: 40px;
 				border-radius: 15px;
 				margin-right: 10px;
+				display: block;
+
+				position: relative;
+
+				&::after {
+					position: absolute;
+					content: '';
+					width: 10px;
+					height: 10px;
+					top: 3px;
+					right: 3px;
+					background-color: #ff0000;
+					border-radius: 50%;
+				}
 			}
 
 			.item-content {
