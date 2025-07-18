@@ -8,23 +8,7 @@ import {
 
 export const useCartGoodsStore = defineStore('cart-goods', () => {
 
-	const cartGoods = ref([{
-			id: 1,
-			imgSrc: '/static/home/goodsImg/1.png',
-			title: '361飞燃4|全掌碳板PB竞速跑鞋',
-			price: 609,
-			count: 1,
-			checked: true
-		},
-		{
-			id: 2,
-			imgSrc: '/static/home/goodsImg/2.png',
-			title: 'TATA他她小香风渔夫鞋女鞋春季新款复古单鞋女鞋休闲鞋子UMK01AA5',
-			price: 399,
-			count: 2,
-			checked: true
-		}
-	])
+	const cartGoods = ref([])
 
 	// 改变某个产品数量
 	function changeCount(id, number) {
