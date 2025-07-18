@@ -59,6 +59,23 @@
 	import {
 		useGoodsStore
 	} from '../../stores/goods'
+	import {
+		onShow
+	} from '@dcloudio/uni-app'
+	import {
+		useCartGoodsStore
+	} from '../../stores/cart-goods'
+
+	import {
+		storeToRefs
+	} from 'pinia'
+
+	const cartGoodsStore = useCartGoodsStore()
+
+	const {
+		cartGoods
+	} = storeToRefs(cartGoodsStore)
+
 
 	const goodsStore = useGoodsStore()
 
@@ -73,6 +90,13 @@
 			url: '/pages/category/category'
 		})
 	}
+
+	onShow(() => {
+		uni.setTabBarBadge({
+			index: 3,
+			text: String(cartGoods.value.length)
+		})
+	})
 </script>
 
 <style lang="scss" scoped>

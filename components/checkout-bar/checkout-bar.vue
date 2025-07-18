@@ -12,24 +12,55 @@
 		</view>
 
 		<!-- 结算按钮 -->
-		<view class="checkout-btn">
+		<view class="checkout-btn" @click="handleCheckOut">
 			结算（{{checkedCnt}}）
 		</view>
 	</view>
 </template>
 
-<script setup lang="ts">
-	import { ref } from 'vue';
-	import { useCartGoodsStore } from '../../stores/cart-goods.js'
-	import { storeToRefs } from 'pinia'
+<script setup lang="js">
+	import {
+		ref
+	} from 'vue';
+	import {
+		useCartGoodsStore
+	} from '../../stores/cart-goods.js'
+	import {
+		storeToRefs
+	} from 'pinia'
 
 	const cartGoodsStore = useCartGoodsStore()
 
-	const { isAllChecked, checkedMoney, checkedCnt } = storeToRefs(cartGoodsStore)
+	const {
+		isAllChecked,
+		checkedMoney,
+		checkedCnt,
+		cartGoods
+	} = storeToRefs(cartGoodsStore)
 
 
 	function toggleCheck() {
 		isAllChecked.value = !isAllChecked.value
+	}
+
+	function handleCheckOut() {
+		if (checkedCnt.value === 0) {
+			return uni.showToast({
+				title: '请至少选择一项商品',
+				icon: 'error'
+			})
+		}
+
+
+		// 结算成功后清除全部状态为checked的数据
+		setTimeout(() => {
+			uni.showToast({
+				title: '结算成功',
+				icon: 'success'
+			})
+			cartGoods.value = cartGoods.value.filter(i => !i.checked)
+		}, 300)
+
 	}
 </script>
 

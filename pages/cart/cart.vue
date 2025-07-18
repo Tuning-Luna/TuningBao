@@ -18,7 +18,7 @@
 		</view>
 
 		<!-- 展示底部结算框 -->
-		<view class="checkout-bar">
+		<view class="checkout-bar" v-show="cartGoods.length > 0">
 			<checkout-bar></checkout-bar>
 		</view>
 

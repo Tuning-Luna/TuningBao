@@ -90,7 +90,8 @@ export const useCartGoodsStore = defineStore('cart-goods', () => {
 	const checkedCnt = computed(() =>
 		cartGoods.value
 		.filter(i => i.count > 0)
-		.reduce((total, cur) => total + (cur.checked ? 1 : 0), 0)
+		.filter(i => i.checked)
+		.reduce((total, cur) => total + cur.count, 0)
 	)
 
 

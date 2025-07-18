@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container" @click="handleClick">
 
 		<!-- 顶部展示头像和姓名区域 -->
 		<view class="top-avatar">
@@ -94,6 +94,13 @@
 	import { storeToRefs } from 'pinia'
 
 	const { orderDate } = storeToRefs(useMyStore())
+
+	function handleClick() {
+		uni.showToast({
+			title: '此页面目前没有任何交互，请先去体验其他页面吧~',
+			icon: 'none'
+		})
+	}
 </script>
 
 <style lang="scss" scoped>
