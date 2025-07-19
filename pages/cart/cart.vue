@@ -24,23 +24,40 @@
 
 	</view>
 </template>
-
-<script setup lang="ts">
+j
+<script setup lang="js">
 	import cartItem from '@/components/cart-item/cart-item.vue'
 	import checkoutBar from '@/components/checkout-bar/checkout-bar.vue'
 
-	import { useCartGoodsStore } from '../../stores/cart-goods.js'
-	import { storeToRefs } from 'pinia'
+	import {
+		useCartGoodsStore
+	} from '../../stores/cart-goods.js'
+	import {
+		storeToRefs
+	} from 'pinia'
+
+	import {
+		onShow
+	} from '@dcloudio/uni-app'
+	import {
+		updateCartBadge
+	} from '@/utils/setCartBadge'
 
 	const cartGoodsStore = useCartGoodsStore()
 
-	const { cartGoods } = storeToRefs(cartGoodsStore)
+	const {
+		cartGoods
+	} = storeToRefs(cartGoodsStore)
 
 	function handleGoHome() {
 		uni.switchTab({
 			url: '/pages/home/home'
 		})
 	}
+
+	onShow(() => {
+		updateCartBadge()
+	})
 </script>
 
 <style lang="scss" scoped>

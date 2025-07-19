@@ -58,13 +58,17 @@
 	import goodCard from '@/components/good-card/good-card.vue'
 	import {
 		useGoodsStore
-	} from '../../stores/goods'
+	} from '../../stores/goods.js'
 	import {
 		onShow
 	} from '@dcloudio/uni-app'
 	import {
+		updateCartBadge
+	} from '@/utils/setCartBadge'
+
+	import {
 		useCartGoodsStore
-	} from '../../stores/cart-goods'
+	} from '../../stores/cart-goods.js'
 
 	import {
 		storeToRefs
@@ -92,10 +96,7 @@
 	}
 
 	onShow(() => {
-		uni.setTabBarBadge({
-			index: 3,
-			text: String(cartGoods.value.length)
-		})
+		updateCartBadge()
 	})
 </script>
 

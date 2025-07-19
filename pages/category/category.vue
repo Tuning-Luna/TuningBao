@@ -42,6 +42,13 @@
 		useCategoryStore
 	} from '../../stores/category.js'
 
+	import {
+		onShow
+	} from '@dcloudio/uni-app'
+	import {
+		updateCartBadge
+	} from '@/utils/setCartBadge'
+
 	const categoryStore = useCategoryStore()
 	const activeIndex = ref(0)
 	const scrollTop = ref(0)
@@ -58,6 +65,10 @@
 			icon: 'none'
 		})
 	}
+
+	onShow(() => {
+		updateCartBadge()
+	})
 </script>
 
 <style lang="scss" scoped>
