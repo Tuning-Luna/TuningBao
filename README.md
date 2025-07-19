@@ -8,35 +8,9 @@ TuningBao 是一个使用 [uni-app](https://uniapp.dcloud.io) 开发的仿淘宝
 
 ## 效果展示
 
-![image-20250719213524350](assets/image-20250719213524350.png)
+[效果展示](./效果展示.md)
 
 
-
-![image-20250719213552020](assets/image-20250719213552020.png)
-
-
-
-
-
-![image-20250719213602479](assets/image-20250719213602479.png)
-
-
-
-![image-20250719213618299](assets/image-20250719213618299.png)
-
-
-
-![image-20250719213643141](assets/image-20250719213643141.png)
-
-
-
-
-
-![image-20250719213653927](assets/image-20250719213653927.png)
-
-
-
-![image-20250719213737900](assets/image-20250719213737900.png)
 
 ## 项目亮点
 
