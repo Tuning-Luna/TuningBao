@@ -6,7 +6,6 @@
 			<top-search></top-search>
 		</view>
 
-
 		<!-- 轮播图 -->
 		<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="i in 5" :key="i">

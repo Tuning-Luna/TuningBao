@@ -1,4 +1,4 @@
-// 这个辅助函数
+// 这个辅助函数用于设置购物车的徽标
 import {
 	useCartGoodsStore
 } from '@/stores/cart-goods'
