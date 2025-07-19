@@ -1,0 +1,80 @@
+# TuningBao · 电商模板（uni-app）
+
+TuningBao 是一个使用 [uni-app](https://uniapp.dcloud.io) 开发的仿淘宝电商平台的前端项目（小程序UI模板）。聚焦页面结构和交互逻辑，全部数据为静态模拟。
+
+技术栈：UniApp + Pinia
+
+
+
+## 效果展示
+
+![image-20250719213524350](assets/image-20250719213524350.png)
+
+
+
+![image-20250719213552020](assets/image-20250719213552020.png)
+
+
+
+
+
+![image-20250719213602479](assets/image-20250719213602479.png)
+
+
+
+![image-20250719213618299](assets/image-20250719213618299.png)
+
+
+
+![image-20250719213643141](assets/image-20250719213643141.png)
+
+
+
+
+
+![image-20250719213653927](assets/image-20250719213653927.png)
+
+
+
+![image-20250719213737900](assets/image-20250719213737900.png)
+
+## 项目亮点
+
+- 仿淘宝首页布局与交互风格
+- 商品分类 / 购物车 / 我的 页面结构完整
+- 支持基础的交互逻辑（如 tabBar、徽标、商品展示）
+- 使用 `Pinia` 实现状态管理
+- 页面基于 `uni-app`，支持多平台运行（微信小程序、H5）
+
+
+
+## 快速启动
+
+请确保有 [HBuilderX](https://dcloud.io/hbuilderx.html) 或者和 [Nodejs环境](https://nodejs.org/en)
+
+克隆仓库到本地：
+
+```bash
+git clone https://github.com/Tuning-Luna/TuningBao.git
+```
+
+进入项目根文件夹：
+
+````bash
+cd TuningBao
+````
+
+下载依赖：
+
+````bash
+npm i
+````
+
+然后在HBuildX里面运行到对应平台（H5，APP，WXMP）即可
+
+
+
+## Dev log
+
+[开发框架](./开发框架.md)
+
