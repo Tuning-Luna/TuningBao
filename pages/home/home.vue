@@ -16,7 +16,6 @@
 
 		<!-- 分类展示区域 -->
 		<view class="cate">
-
 			<view class="cate-item" @click="handleCateClick">
 				<image class="img" src="/static/home/cateImg/sport.png"></image>
 				<view class="label">运动户外</view>
