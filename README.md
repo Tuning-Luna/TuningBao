@@ -12,19 +12,9 @@ TuningBao 是一个使用 [uni-app](https://uniapp.dcloud.io) 开发的仿淘宝
 
 
 
-## 项目亮点
-
-- 仿淘宝首页布局与交互风格
-- 商品分类 / 购物车 / 我的 页面结构完整
-- 支持基础的交互逻辑（如 tabBar、徽标、商品展示）
-- 使用 `Pinia` 实现状态管理
-- 页面基于 `uni-app`，支持多平台运行（微信小程序、H5）
-
-
-
 ## 快速启动
 
-请确保有 [HBuilderX](https://dcloud.io/hbuilderx.html) 或者和 [Nodejs环境](https://nodejs.org/en)
+请确保电脑上有 [HBuilderX](https://dcloud.io/hbuilderx.html) 和 [Nodejs](https://nodejs.org/en)
 
 克隆仓库到本地：
 
